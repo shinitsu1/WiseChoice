@@ -42,6 +42,22 @@ Route::get('/order-list', function(){
     return view('order-list');
 })->name('order-list');
 
+Route::get('/gcash1', function(){
+    return view('gcash1');
+})->name('gcash1');
+
+Route::get('/gcash2', function(){
+    return view('gcash2');
+})->name('gcash2');
+
+Route::get('/gcash3', function(){
+    return view('gcash3');
+})->name('gcash3');
+
+Route::get('/gcash4', function(){
+    return view('gcash4');
+})->name('gcash4');
+
 
 
 

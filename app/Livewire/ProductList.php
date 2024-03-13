@@ -67,4 +67,18 @@ class ProductList extends Component
             'products' => $products
         ]);
     }
+
+    public function category($ctg)
+    {
+        $data = Products::find($ctg);
+        if($data){
+            if($data->status){
+                $data->status = 0;
+            }
+        else{
+            $data->status = 1;
+        }
+        $data->save();
+        }
+    }
 }

@@ -84,7 +84,7 @@
                             <span class="flex-1 text-lg font-bold">TO PAY:</span>
                             <span class="text-3xl flex-1">₱{{$grand_total}}</span>
                             <div class="ml-10">
-                                <button wire:click="store">
+                                <button wire:click="type">
                                     <span class="flex items-center justify-center w-full py-2 bg-blue-600 rounded-md px-10 text-white">CHECK OUT ({{ $user_cart }})</span>
                                 </button>
                             </div>
@@ -98,5 +98,28 @@
                 </div>
             </div>
         </div>
+        @if (session('type'))
+        <div class="bg-gray-400">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="py-5 text-gray-900">
+                        <div class="flex items-center">
+                            <span class="flex-1 text-lg font-bold">{{ session('type') }}</span>
+                            <div class="ml-10">
+                                <button wire:click="store">
+                                    <span class="flex items-center justify-center w-full py-2 bg-blue-600 rounded-md px-10 text-white">CASH ON DELIVERY</span>
+                                </button>
+                            </div>
+                            <div class="ml-10">
+                                <button wire:click="gcash">
+                                    <span class="flex items-center justify-center w-full py-2 bg-blue-600 rounded-md px-10 text-white">{{ __('via GCash') }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
     </div>
 </div>

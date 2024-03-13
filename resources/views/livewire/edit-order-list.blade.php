@@ -36,7 +36,7 @@
                                 {{ $order->created_at }}
                             </td>
                             <td class="px-4 py-3">
-                                {{ $order->updated_at }}
+                                {{ $order->received }}
                             </td>
                             <td class="px-4 py-3">
                                 ₱{{ $order->grand_total }}
@@ -50,7 +50,7 @@
                                 <div class="w-11/12 flex justify-end">
                                     <button class="bg-green-200 px-4 py-2 rounded-md"
                                         wire:click="update({{ $order->id }})">
-                                        Payment Received
+                                        Order Received
                                     </button>
                                     <button class="bg-red-200 px-4 py-2 ml-2 rounded-md"
                                         wire:click="delete({{ $order->id }})">

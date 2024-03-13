@@ -21,6 +21,16 @@ class UserCart extends Component
     public $payment; //payment method (cod/g cash)
     public $to_pay;
 
+    public function type()
+    {
+        session()->flash('type', 'Choose Your Payment Method');
+    }
+
+    public function gcash()
+    {
+        return redirect()->route('gcash1');
+    }
+
 
     public function store()
     {
@@ -42,7 +52,7 @@ class UserCart extends Component
             'earnings' => 0,
             'received' => '- - -',
         ]);
-        
+
 
         Cart::where('user_id',$user)->delete();
         session()->flash('message', 'Your Order has been processed.');
