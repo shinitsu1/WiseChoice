@@ -8,6 +8,7 @@
         @stack('chatify-meta')
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

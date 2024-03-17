@@ -35,16 +35,16 @@ class DatabaseSeeder extends Seeder
             'password' => '1234',
         ]);
 
-        \App\Models\Products::factory()->create([
-            'product'  => 'CELLUCOR C4',
-            'base_price' => '1550',
-            'sell_price' => '1650',
-            'quantity' => '50',
-            'category' => 'Pre Workout',
-            'image' => '/storage/images/WS_c4.jpg',
-            'sold' => '0',
-            'desc' => 'America’s Number 1 Selling Pre-Workout, Cellucor’s C4 is a trusted pre-workout for men and women of all training levels and has earned the title of America’s Number 1 Selling Pre-workout.',
-            ]);
+        // \App\Models\Products::factory()->create([
+        //     'product'  => 'CELLUCOR C4',
+        //     'base_price' => '1550',
+        //     'sell_price' => '1650',
+        //     'quantity' => '50',
+        //     'category' => 'Pre Workout',
+        //     'image' => '/storage/images/WS_c4.jpg',
+        //     'sold' => '0',
+        //     'desc' => 'America’s Number 1 Selling Pre-Workout, Cellucor’s C4 is a trusted pre-workout for men and women of all training levels and has earned the title of America’s Number 1 Selling Pre-workout.',
+        //     ]);
 
 
     }
