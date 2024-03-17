@@ -23,7 +23,9 @@
                             </div>
                         </div>
                         <div class="flex items-center justify-center p-5">
-                            <img name="img" src="{{ $product->image }}" alt="img" class="h-32">
+                            <button wire:click.prevent="preview({{$product->id}})">
+                                <img name="img" src="{{ $product->image }}" alt="img" class="h-40">
+                                </button>
                         </div>
                         <div class="flex items-center justify-center font-bold">
                             {{ $product->product }}
@@ -64,7 +66,9 @@
                                 </div>
                             </div>
                             <div class="flex items-center justify-center p-5">
+                                <button wire:click.prevent="preview({{$product->id}})">
                                 <img name="img" src="{{ $product->image }}" alt="img" class="h-40">
+                                </button>
                             </div>
                             <div class="flex items-center justify-center font-bold">
                                 <label for="product">{{ $product->product }}</label>
@@ -100,4 +104,5 @@
             </div>
         </form>
     @endif
+    @include('livewire.includes.modal')
 </div>

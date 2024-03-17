@@ -21,6 +21,30 @@ class ProductList extends Component
     public $total_price;
     public $sold;
     public $minus;
+    public $isOpen = 0;
+    public $desc;
+    public $name;
+
+    public function openModal()
+    {
+        $this->isOpen = true;
+        // $this->resetValidation();
+    }
+    public function closeModal()
+    {
+        $this->isOpen = false;
+    }
+
+    public function preview($productId)
+    {
+        $item = Products::find($productId);
+        $this->image = $item->image;
+        $this->sell_price = $item->sell_price;
+        $this->desc = $item->desc;
+        $this->sold = $item->sold;
+        $this->name = $item->product;
+        $this->openModal();
+    }
 
     public function store($id){
         $product = Products::findOrFail($id);

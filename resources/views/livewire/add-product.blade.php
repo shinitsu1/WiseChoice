@@ -5,6 +5,17 @@
         @endif
 
         <div>
+            <x-input-label for="image" :value="__('Product Image')" />
+            <input wire:model="image" accept="image/png, image/jpeg" type="file" id="image"
+                class="ring-1 ring-inset ring-blue-300 bg-blue-100 text-gray-900 text-md rounded block w-full">
+            @error('image')
+                <p class="text-white text-xs p-1">
+                    {{ $message }}
+                </p>
+            @enderror
+        </div>
+
+        <div class="pt-4">
             <x-input-label for="product" :value="__('Name of Product:')" />
             <x-text-input wire:model="product" id="product" class="block mt-1 w-full" type="text" name="product"
                 :value="old('product')" required autofocus autocomplete="product" />
@@ -47,16 +58,14 @@
                 </p>
             @enderror
         </div>
+
         <div class="pt-4">
-            <x-input-label for="image" :value="__('Select Image')" />
-            <input wire:model="image" accept="image/png, image/jpeg" type="file" id="image"
-                class="ring-1 ring-inset ring-blue-300 bg-blue-100 text-gray-900 text-md rounded block w-full">
-            @error('image')
-                <p class="text-white text-xs p-1">
-                    {{ $message }}
-                </p>
-            @enderror
+            <x-input-label for="desc" :value="__('Product Description:')" />
+            <x-text-input wire:model="desc" id="desc" class="block mt-1 w-full" type="text"
+                name="desc" :value="old('desc')" required autofocus autocomplete="desc" />
+            <x-input-error :messages="$errors->get('desc')" class="mt-2" />
         </div>
+
 
         <div class="pt-4 flex justify-end">
             <button type="button"

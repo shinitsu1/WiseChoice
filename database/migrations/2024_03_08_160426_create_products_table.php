@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('base_price');
             $table->string('sell_price');
             $table->string('quantity');
+            $table->string('desc');
             $table->string('sold');
             $table->timestamps();
         });

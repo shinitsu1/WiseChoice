@@ -16,6 +16,7 @@ class AddProduct extends Component
     public $category;
     public $quantity;
     public $image;
+    public $desc;
 
     public function store()
     {
@@ -26,6 +27,7 @@ class AddProduct extends Component
             'quantity' => 'required',
             'category' => 'required',
             'image' => 'required|image|max:1024',
+            'desc' => 'required',
         ]);
 
         if($this->image){
@@ -44,6 +46,7 @@ class AddProduct extends Component
             'category' => $this->category,
             'image' => $this->image,
             'sold' => 0,
+            'desc'=> $this->desc,
         ]);
 
         session()->flash('message', 'Product Added.');
