@@ -6,8 +6,8 @@
     </x-slot>
 
 
-    <h1 class="text-center pt-5 text-lg">Total Orders by Month</h1>
-    <div class="col-md-6">
+
+    {{-- <div class="col-md-6">
         <div class="form-group">
             <label for="date_filter">Filter by Date:</label>
 
@@ -28,18 +28,35 @@
                 </div>
             </form>
 
-        </div>
-
-<div class="w-[900px] m-auto">
-    <canvas id="chart"></canvas>
+        </div> --}}
+<div class="flex">
+    <div class="w-[600px] m-auto border border-gray-400 p-8">
+        <h1 class="text-center pt-5 text-lg">Total Orders by Month</h1>
+        <canvas id="chart"></canvas>
+    </div>
+    <div class="w-[600px] m-auto border border-gray-400 p-8">
+        <h1 class="text-center pt-5 text-lg">Monthly Income</h1>
+        <canvas id="income"></canvas>
+    </div>
 </div>
+
     <script>
         var ctx = document.getElementById('chart').getContext('2d');
-        var userChart = new Chart(ctx,{
+        var userChart = new Chart(ctx, {
             type: 'bar',
-            data:{
+            data: {
                 labels: {!! json_encode($labels) !!},
                 datasets: {!! json_encode($datasets) !!}
+            },
+        });
+    </script>
+    <script>
+        var ctx = document.getElementById('income').getContext('2d');
+        var userChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {!! json_encode($income_labels) !!},
+                datasets: {!! json_encode($income_datasets) !!}
             },
         });
     </script>
@@ -213,7 +230,7 @@
     </script> --}}
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-4 text-gray-900">
 
                     <livewire:edit-dashboard />
